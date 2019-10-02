@@ -17,21 +17,27 @@
 
         class Person{
 
-            function __construct($name, $img, $gender, $hair, $hat, $moustache, $glasses) {		
+            // function __construct($name, $img, $gender, $hair, $hat, $moustache, $glasses) {		
+            //     $this->name = $name;
+            //     $this->img = $img;
+            //     $this->gender = $gender;
+            //     $this->hair = $hair;		
+            //     $this->hat = $hat;
+            //     $this->moustache = $moustache;
+            //     $this->glasses = $glasses;
+
+            function __construct($name, $img, $gender, $array) {		
                 $this->name = $name;
                 $this->img = $img;
                 $this->gender = $gender;
-                $this->hair = $hair;		
-                $this->hat = $hat;
-                $this->moustache = $moustache;
-                $this->glasses = $glasses;
+                $this->array = $array;
 
                 $string = "<div class='person ";
                 $string .= $this->name." ";
-                $string .= $this->gender." ";
-                $string .= $this->hair." ";
-                $string .= $this->moustache." ";
-                $string .= $this->glasses."'>";
+                foreach($this->array as $value){
+                    $string .= $value." ";                    
+                }
+                $string .= $this->gender."'>";
                 $string .= "<img src='".$this->img."'>";
                 $string .= "</div>";
                 echo $string;
@@ -40,14 +46,14 @@
             }
         }
 
-        $alex = new Person("alex", "./img/GWAlex.jpg", "male", "black-hair", "no-hat", "moustache", "no-glasses");
-        $alfred = new Person("alfred", "./img/GWAlfred.jpg", "male", "red-hair", "no-hat", "moustache", "no-glasses");
-        $anita = new Person("anita", "./img/GWAnita.jpg", "female", "blond-hair", "no-hat", "no-moustache", "no-glasses");
-        $bill = new Person("bill", "./img/GWBill.jpg", "male", "no-hair", "no-hat", "goatee", "no-glasses");
-        $claire = new Person("claire", "./img/GWClaire.jpg", "female", "red-hair", "hat", "no-moustache", "glasses");
-        $eric = new Person("eric", "./img/GWEric.jpg", "male", "blond-hair", "hat", "no-moustache", "no-glasses");
-        $maria = new Person("maria", "./img/GWMaria.jpg", "female", "brown-hair", "hat", "no-moustache", "no-glasses");
-        $sam = new Person("sam", "./img/GWSam.jpg", "male", "white-hair", "no-hat", "no-moustache", "glasses");
+        $alex = new Person("alex", "./img/GWAlex.jpg", "male", ["black-hair", "moustache"]);
+        $alfred = new Person("alfred", "./img/GWAlfred.jpg", "male", ["red-hair", "moustache"]);
+        $anita = new Person("anita", "./img/GWAnita.jpg", "female", ["blond-hair"]);
+        $bill = new Person("bill", "./img/GWBill.jpg", "male", ["bold", "red-hair", "goatee"]);
+        $claire = new Person("claire", "./img/GWClaire.jpg", "female", ["red-hair", "hat", "glasses"]);
+        $eric = new Person("eric", "./img/GWEric.jpg", "male", ["blond-hair", "hat"]);
+        $maria = new Person("maria", "./img/GWMaria.jpg", "female", ["brown-hair", "hat"]);
+        $sam = new Person("sam", "./img/GWSam.jpg", "male", ["bold", "white-hair", "glasses"]);
 
         // $whoItIs = $allPersons[array_rand($allPersons, 1)];
 
@@ -88,7 +94,7 @@
             new Question("blond haarkleur?", "blond-hair", "haircolor");
             new Question("bruin haarkleur?", "brown-hair", "haircolor");
             new Question("wit haarkleur?", "white-hair", "haircolor");
-            new Question("is de persoon kaal?", "no-hair", "no-hair");            
+            new Question("is de persoon kaal?", "bold", "bold");            
             new Question("heeft hij/zij een hoed?", "hat", "hat");
             new Question("heeft hij een snor?", "moustache", "moustache");
             new Question("heeft hij een sikje?", "goatee", "goatee");
