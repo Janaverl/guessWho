@@ -1,0 +1,30 @@
+body {
+  background-color: #F9D020;
+  padding-left: 250px;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  width: 90vw;
+  grid-gap: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.controls {
+  position: fixed;
+  left: 0;
+  top: 100px;
+  width: 200px;
+  background: lightgray;
+  padding: 5px;
+}
+
+form > label {
+  display: block;
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=style.css.map */
