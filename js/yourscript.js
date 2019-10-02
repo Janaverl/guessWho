@@ -19,9 +19,10 @@ $(document).ready(function () {
         var radioValue = $("input[name='questions']:checked").val();
         var radioClass = $("input[name='questions']:checked").attr('class');
         if($( whoItIs ).hasClass( radioValue )){
-            $(".person").not('.'+radioValue).replaceWith("<div><p>Deze is het niet!</p></div>");
+            $(".person").not('.'+radioValue).replaceWith("<div><img src='./img/back.jpg'></div>");
+            
         } else{
-            $('.person.'+radioValue).replaceWith("<div><p>Deze is het niet!</p></div>");
+            $('.person.'+radioValue).replaceWith("<div><img src='./img/back.jpg'></div>");
         }
         
         // $("label."+radioClass).fadeOut();
