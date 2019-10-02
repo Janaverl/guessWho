@@ -17,11 +17,43 @@ $(document).ready(function () {
     $("input[type='radio']").click(function(){
         t += 1;
         var radioValue = $("input[name='questions']:checked").val();
+        var radioClass = $("input[name='questions']:checked").attr('class');
         if($( whoItIs ).hasClass( radioValue )){
             $(".person").not('.'+radioValue).replaceWith("<div><p>Deze is het niet!</p></div>");
         } else{
-            $('.'+radioValue).replaceWith("<div><p>Deze is het niet!</p></div>");
+            $('.person.'+radioValue).replaceWith("<div><p>Deze is het niet!</p></div>");
         }
+        
+        // $("label."+radioClass).fadeOut();
+        $("input").each(function(){
+            var that = this;
+            // console.log($(this).val());
+            var exists = false;
+            // console.log(exists);
+            $(".person").each(function(){
+                if($(this).hasClass($(that).val())){
+                    console.log("yep");
+                    exists = true;
+                }
+            });
+            if(exists==false){
+                $("label."+$(this).val()).remove();
+            }
+
+            //     var $deze = $(this);
+            //     if($($deze).hasClass("."+that.val()){
+            //         exists = true;
+            //     });
+            // });
+            // if(exists = false){
+            //     $(this).fadeOut();
+            // };
+
+        // if($( this ).hasClass( radioClass )){
+        //     var $this = $(this);
+        //     console.log($this);
+        //     }
+        });
         var len = $('.person').length;
         if(len == 1 ){
             alert("you won in "+t+" times!");

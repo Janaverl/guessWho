@@ -63,30 +63,36 @@
 
             <?php
             class Question{
-                function __construct($question, $value){
+                function __construct($question, $value, $class){
                     $this->question = $question;
                     $this->value = $value;
+                    $this->class = $class;
 
-                    $string = '<input type="radio" name="questions" value="';
-                    $string .= $this->value.'">';
+                    $string = '<label class="';
+                    $string .= $this->value;                   
+                    $string .= '"><input type="radio" name="questions" class="';
+                    $string .= $this->class.'"';
+                    $string .= ' value="';
+                    $string .= $this->value.'"';
+                    $string .='>';             
                     $string .= $this->question;
-                    $string .= "<br>";
+                    $string .= "</label>";
                     echo $string;
                 }
             }
 
-            new Question("is het een man?", "male");
-            new Question("is het een vrouw?", "female");
-            new Question("zwart haarkleur?", "black-hair");
-            new Question("rood haarkleur?", "red-hair");
-            new Question("blond haarkleur?", "blond-hair");
-            new Question("bruin haarkleur?", "brown-hair");
-            new Question("wit haarkleur?", "white-hair");
-            new Question("is de persoon kaal?", "no-hair");            
-            new Question("heeft hij/zij een hoed?", "hat");
-            new Question("heeft hij een snor?", "moustache");
-            new Question("heeft hij een sikje?", "Goatee");
-            new Question("heeft hij/zij een bril?", "glasses");
+            new Question("is het een man?", "male", "gender");
+            new Question("is het een vrouw?", "female", "gender");
+            new Question("zwart haarkleur?", "black-hair", "haircolor");
+            new Question("rood haarkleur?", "red-hair", "haircolor");
+            new Question("blond haarkleur?", "blond-hair", "haircolor");
+            new Question("bruin haarkleur?", "brown-hair", "haircolor");
+            new Question("wit haarkleur?", "white-hair", "haircolor");
+            new Question("is de persoon kaal?", "no-hair", "no-hair");            
+            new Question("heeft hij/zij een hoed?", "hat", "hat");
+            new Question("heeft hij een snor?", "moustache", "moustache");
+            new Question("heeft hij een sikje?", "goatee", "goatee");
+            new Question("heeft hij/zij een bril?", "glasses", "glasses");
             
 
 
