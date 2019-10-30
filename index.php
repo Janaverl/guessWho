@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wie is het?</title>
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
+    <div class="wrapper">
     <h1>Ra ra ra, wie zou het zijn?</h1>
     <div class="container">
         <div class="controls">
@@ -48,6 +52,9 @@
                 new Question("heeft hij/zij een bril?", "glasses", "glasses");
                 ?>
             </form>
+            
+            <div class="answering">
+            </div>
         </div>
         <div class="grid">
 
@@ -103,6 +110,7 @@
 
             
         </div>
+    </div>
     </div>
 
 
