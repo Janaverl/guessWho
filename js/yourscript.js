@@ -1,36 +1,29 @@
 $(document).ready(function () {
-    // detect form change (event)
-
-    // search for elements with same property
-
-    // change DOM (add or remove persons)
-
+    // pick a random person
     var len = $('.person').length;
-    console.log(len);
     var random = Math.floor( Math.random() * len );
-    console.log(random);
     var whoItIs = $('.person').eq(random);
-    console.log(whoItIs);
 
+    // start counting the efforts
     var t = 0;
 
+    // on event "click", check question with all the persons
     $("input[type='radio']").click(function(){
+        // count efforts
         t += 1;
+        // save the value of the checked question
         var radioValue = $("input[name='questions']:checked").val();
-        var radioClass = $("input[name='questions']:checked").attr('class');
+        // check if the value exists as a class with the random picked person. If it's true, turn over all the cards that don't have that class. If not, turn over all the cards that has.
         if($( whoItIs ).hasClass( radioValue )){
             $(".person").not('.'+radioValue).replaceWith("<div><img src='./img/back.jpg'></div>");
             
         } else{
             $('.person.'+radioValue).replaceWith("<div><img src='./img/back.jpg'></div>");
         }
-        
-        // $("label."+radioClass).fadeOut();
+        // check all the questions with all the remaining classes in the playboard. only keep the relevant questions. 
         $("input").each(function(){
             var that = this;
-            // console.log($(this).val());
             var exists = false;
-            // console.log(exists);
             $(".person").each(function(){
                 if($(this).hasClass($(that).val())){
                     console.log("yep");
@@ -40,26 +33,11 @@ $(document).ready(function () {
             if(exists==false){
                 $("label."+$(this).val()).remove();
             }
-
-            //     var $deze = $(this);
-            //     if($($deze).hasClass("."+that.val()){
-            //         exists = true;
-            //     });
-            // });
-            // if(exists = false){
-            //     $(this).fadeOut();
-            // };
-
-        // if($( this ).hasClass( radioClass )){
-        //     var $this = $(this);
-        //     console.log($this);
-        //     }
         });
         var len = $('.person').length;
+        // end the game when only one character remains
         if(len == 1 ){
             alert("you won in "+t+" times!");
         }
     });    
-
-
 });
