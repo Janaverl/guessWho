@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Guess Who?</title>
+    <title>Wie is het?</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Guess Who?</h1>
+    <h1>Ra ra ra, wie zou het zijn?</h1>
     <div class="container">
         <div class="controls">
             <form action="">
@@ -76,14 +76,26 @@
                 }
             }
 
-            $alex = new Person("alex", "./img/GWAlex.jpg", "male", ["black-hair", "moustache"]);
-            $alfred = new Person("alfred", "./img/GWAlfred.jpg", "male", ["red-hair", "moustache"]);
-            $anita = new Person("anita", "./img/GWAnita.jpg", "female", ["blond-hair"]);
-            $bill = new Person("bill", "./img/GWBill.jpg", "male", ["bold", "red-hair", "goatee"]);
-            $claire = new Person("claire", "./img/GWClaire.jpg", "female", ["red-hair", "hat", "glasses"]);
-            $eric = new Person("eric", "./img/GWEric.jpg", "male", ["blond-hair", "hat"]);
-            $maria = new Person("maria", "./img/GWMaria.jpg", "female", ["brown-hair", "hat"]);
-            $sam = new Person("sam", "./img/GWSam.jpg", "male", ["bold", "white-hair", "glasses"]);
+            $IMG_01 = new Person("IMG_01", "./img/IMG_01.jpg", "female", ["dark-brown", "glasses", "bandana"]);
+            $IMG_02 = new Person("IMG_02", "./img/IMG_02.jpg", "female", ["light-brown", "glasses", "headscarf"]);
+            $IMG_03 = new Person("IMG_03", "./img/IMG_03.jpg", "female", ["red", "glasses", "earrings", "hat"]);
+            $IMG_04 = new Person("IMG_04", "./img/IMG_04.jpg", "female", ["dark-brown", "earrings", "scarf"]);
+            $IMG_05 = new Person("IMG_05", "./img/IMG_05.jpg", "male", ["dark-brown", "hat", "scarf"]);
+
+            // TODO VANAF HIER
+            $IMG_06 = new Person("IMG_06", "./img/IMG_06.jpg", "female", ["blond-hair", "hat"]);
+            $IMG_07 = new Person("IMG_07", "./img/IMG_07.jpg", "male", ["brown-hair", "hat"]);
+            $IMG_08 = new Person("IMG_08", "./img/IMG_08.jpg", "male", ["bold", "white-hair", "glasses"]);
+            $IMG_09 = new Person("IMG_09", "./img/IMG_09.jpg", "male", ["bold", "white-hair", "glasses"]);
+            $IMG_10 = new Person("IMG_10", "./img/IMG_10.jpg", "male", ["bold", "white-hair", "glasses"]);
+            $IMG_11 = new Person("IMG_11", "./img/IMG_11.jpg", "male", ["bold", "white-hair", "glasses"]);
+            $IMG_12 = new Person("IMG_12", "./img/IMG_12.jpg", "male", ["bold", "white-hair", "glasses"]);
+            $IMG_13 = new Person("IMG_13", "./img/IMG_13.jpg", "male", ["bold", "white-hair", "glasses"]);
+            // $IMG_14 = new Person("IMG_14", "./img/IMG_14.jpg", "male", ["bold", "white-hair", "glasses"]);
+            // $IMG_15 = new Person("IMG_15", "./img/IMG_15.jpg", "male", ["bold", "white-hair", "glasses"]);
+            // $IMG_16 = new Person("IMG_16", "./img/IMG_16.jpg", "male", ["bold", "white-hair", "glasses"]);
+            $IMG_17 = new Person("IMG_17", "./img/IMG_17.jpg", "male", ["bold", "white-hair", "glasses"]);
+            $IMG_18 = new Person("IMG_18", "./img/IMG_18.jpg", "male", ["bold", "white-hair", "glasses"]);
 
             // $whoItIs = $allPersons[array_rand($allPersons, 1)];
 
