@@ -47,6 +47,8 @@
                 new Question("wit haarkleur?", "white-hair", "haircolor");
                 new Question("is de persoon kaal?", "bold", "bold");            
                 new Question("heeft hij/zij een hoed?", "hat", "hat");
+                new Question("heeft hij/zij een sjaal?", "scarf", "scarf");
+                
                 new Question("heeft hij een snor?", "moustache", "moustache");
                 new Question("heeft hij een sikje?", "goatee", "goatee");
                 new Question("heeft hij/zij een bril?", "glasses", "glasses");
@@ -83,15 +85,15 @@
                 }
             }
 
-            $IMG_01 = new Person("IMG_01", "./img/IMG_01.jpg", "female", ["dark-brown", "glasses", "bandana"]);
-            $IMG_02 = new Person("IMG_02", "./img/IMG_02.jpg", "female", ["light-brown", "glasses", "headscarf"]);
+            $IMG_01 = new Person("IMG_01", "./img/IMG_01.jpg", "female", ["dark-brown", "glasses", "scarf"]);
+            $IMG_02 = new Person("IMG_02", "./img/IMG_02.jpg", "female", ["light-brown", "glasses", "scarf"]);
             $IMG_03 = new Person("IMG_03", "./img/IMG_03.jpg", "female", ["red", "glasses", "earrings", "hat"]);
             $IMG_04 = new Person("IMG_04", "./img/IMG_04.jpg", "female", ["dark-brown", "earrings", "scarf"]);
             $IMG_05 = new Person("IMG_05", "./img/IMG_05.jpg", "male", ["dark-brown", "hat", "scarf"]);
+            $IMG_06 = new Person("IMG_06", "./img/IMG_06.jpg", "female", ["light-brown", "glasses"]);
+            $IMG_07 = new Person("IMG_07", "./img/IMG_07.jpg", "male", ["brown-hair", "hat", "scarf", "moustache"]);
 
             // TODO VANAF HIER
-            $IMG_06 = new Person("IMG_06", "./img/IMG_06.jpg", "female", ["blond-hair", "hat"]);
-            $IMG_07 = new Person("IMG_07", "./img/IMG_07.jpg", "male", ["brown-hair", "hat"]);
             $IMG_08 = new Person("IMG_08", "./img/IMG_08.jpg", "male", ["bold", "white-hair", "glasses"]);
             $IMG_09 = new Person("IMG_09", "./img/IMG_09.jpg", "male", ["bold", "white-hair", "glasses"]);
             $IMG_10 = new Person("IMG_10", "./img/IMG_10.jpg", "male", ["bold", "white-hair", "glasses"]);
