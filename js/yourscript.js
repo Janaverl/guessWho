@@ -29,45 +29,52 @@ $(document).ready(function () {
         }
 
         // check if the value exists as a class with the random picked person. If it's true, turn over all the cards that don't have that class. If not, turn over all the cards that has.
-
         $(".turn").on( "click", function() {
-
-            // check all the questions with all the remaining classes in the playboard. only keep the relevant questions. 
-            
-            $("input").each(function(){
-                var that = this;
-                var exists = false;
-                $(".person").each(function(){
-                    if($(this).hasClass($(that).val())){
-                        console.log("yep");
-                        exists = true;
-                    }
-                });
-                if(exists==false){
-                    $("label."+$(this).val()).remove();
-                }
-            });
             // turn the cards over
-            function check(){
+            function turnCardsOver(){
                 if($( whoItIs ).hasClass( radioValue )){
-                    $(".person").not('.'+radioValue).replaceWith("<div class='back'><img src='./img/back.jpg'></div>");
+                    $(".person").not('.'+radioValue).replaceWith("<div class='back'><img src='./img/back.png'></div>");
                     
                 } else{
-                    $('.person.'+radioValue).replaceWith("<div class='back'><img src='./img/back.jpg'></div>");
+                    $('.person.'+radioValue).replaceWith("<div class='back'><img src='./img/back.png'></div>");
                 }
             }
+
+            turnCardsOver();
 
             // end the game when only one character remains
             function checkIfWon(){
                 var len = $('.person').length;
                 if(len == 1 ){
-                    alert("you won in "+t+" times!");
+                    alert("Je hebt gewonnen! In "+t+" keer!");
                 }
             }
-
-            check();
             checkIfWon();
 
+            // check all the questions with all the remaining classes in the playboard. only keep the relevant questions. 
+            function removeIrrelevantQuestions(){
+                $("input[type=radio]").each(function(){
+                    var that = this;
+                    // console.log("---"+$(that).val()+"---");
+                    var exists = false;
+                    var c = 0;
+                    $(".person").each(function(){
+                        if($(this).hasClass($(that).val())){
+                            // console.log($(this).html()+" yep "+$(that).val());
+                            exists = true;
+                            c += 1;
+                        }
+                    });
+                    if(exists==false){
+                        $("label."+$(this).val()).remove();
+                    }else if(c == $('.person').length){
+                        $("label."+$(this).val()).remove();
+                    }
+
+                });
+            }
+
+            removeIrrelevantQuestions();
             
             // remove the question and the button
             $('.answer').remove();

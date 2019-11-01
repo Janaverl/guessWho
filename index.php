@@ -16,42 +16,39 @@
     <div class="container">
         <div class="controls">
             <form action="">
-                <label for="questions">choose your question:</label>
+                <label for="questions">Kies je vraag:</label>
 
                 <?php
-                class Question{
-                    function __construct($question, $value, $class){
-                        $this->question = $question;
-                        $this->value = $value;
-                        $this->class = $class;
+                require_once './php/Question.php';
 
-                        $string = '<label class="';
-                        $string .= $this->value;                   
-                        $string .= '"><input type="radio" name="questions" class="';
-                        $string .= $this->class.'"';
-                        $string .= ' value="';
-                        $string .= $this->value.'"';
-                        $string .='>';             
-                        $string .= $this->question;
-                        $string .= "</label>";
-                        echo $string;
-                    }
-                }
+                $male = new Question("is het een man?", "male", "gender");
+                $female = new Question("is het een vrouw?", "female", "gender");
+                $redHair = new Question("rood haarkleur?", "red-hair", "haircolor");
+                $blondHair = new Question("blond haarkleur?", "blond-hair", "haircolor");
+                $darkBrownHair = new Question("donkerbruin haarkleur?", "dark-brown", "haircolor");
+                $lightBrownHair = new Question("lichtbruin haarkleur?", "light-brown", "haircolor");
+                $curly = new Question("krullen?", "curly", "curly");
+                $hat = new Question("heeft hij/zij een hoed?", "hat", "hat");
+                $scarf = new Question("heeft hij/zij een sjaal?", "scarf", "scarf");
+                $moustache = new Question("heeft hij een snor?", "moustache", "moustache");
+                $ringbeard = new Question("heeft hij een ringbaard?", "ringbeard", "ringbeard");
+                $glasses = new Question("heeft hij/zij een bril?", "glasses", "glasses");
+                $earrings = new Question("heeft zij oorbellen?", "earrings", "earrings");
 
-                new Question("is het een man?", "male", "gender");
-                new Question("is het een vrouw?", "female", "gender");
-                new Question("zwart haarkleur?", "black-hair", "haircolor");
-                new Question("rood haarkleur?", "red-hair", "haircolor");
-                new Question("blond haarkleur?", "blond-hair", "haircolor");
-                new Question("bruin haarkleur?", "brown-hair", "haircolor");
-                new Question("wit haarkleur?", "white-hair", "haircolor");
-                new Question("is de persoon kaal?", "bold", "bold");            
-                new Question("heeft hij/zij een hoed?", "hat", "hat");
-                new Question("heeft hij/zij een sjaal?", "scarf", "scarf");
-                
-                new Question("heeft hij een snor?", "moustache", "moustache");
-                new Question("heeft hij een sikje?", "goatee", "goatee");
-                new Question("heeft hij/zij een bril?", "glasses", "glasses");
+                $male->makeQuestion();
+                $female->makeQuestion();
+                $redHair->makeQuestion();
+                $blondHair->makeQuestion();
+                $darkBrownHair->makeQuestion();
+                $lightBrownHair->makeQuestion();
+                $curly->makeQuestion();
+                $hat->makeQuestion();
+                $scarf->makeQuestion();
+                $moustache->makeQuestion();
+                $ringbeard->makeQuestion();
+                $glasses->makeQuestion();
+                $earrings->makeQuestion();
+
                 ?>
             </form>
             
@@ -62,28 +59,7 @@
 
             <?php
 
-            // $allPersons = [];
-
-            class Person{
-                function __construct($name, $img, $gender, $array) {		
-                    $this->name = $name;
-                    $this->img = $img;
-                    $this->gender = $gender;
-                    $this->array = $array;
-
-                    $string = "<div class='person ";
-                    $string .= $this->name." ";
-                    foreach($this->array as $value){
-                        $string .= $value." ";                    
-                    }
-                    $string .= $this->gender."'>";
-                    $string .= "<img src='".$this->img."'>";
-                    $string .= "</div>";
-                    echo $string;
-
-                    // array_push($GLOBALS['allPersons'], $this);
-                }
-            }
+            require_once './php/Person.php';
 
             $IMG_01 = new Person("IMG_01", "./img/IMG_01.jpg", "female", ["dark-brown", "glasses", "scarf"]);
             $IMG_02 = new Person("IMG_02", "./img/IMG_02.jpg", "female", ["light-brown", "glasses", "scarf"]);
@@ -91,22 +67,31 @@
             $IMG_04 = new Person("IMG_04", "./img/IMG_04.jpg", "female", ["dark-brown", "earrings", "scarf"]);
             $IMG_05 = new Person("IMG_05", "./img/IMG_05.jpg", "male", ["dark-brown", "hat", "scarf"]);
             $IMG_06 = new Person("IMG_06", "./img/IMG_06.jpg", "female", ["light-brown", "glasses"]);
-            $IMG_07 = new Person("IMG_07", "./img/IMG_07.jpg", "male", ["brown-hair", "hat", "scarf", "moustache"]);
+            $IMG_07 = new Person("IMG_07", "./img/IMG_07.jpg", "male", ["dark-brown", "hat", "scarf", "moustache"]);
+            $IMG_08 = new Person("IMG_08", "./img/IMG_08.jpg", "male", ["dark-brown", "ringbeard", "moustache", "scarf"]);
+            $IMG_09 = new Person("IMG_09", "./img/IMG_09.jpg", "male", ["dark-brown", "scarf", "glasses"]);
+            $IMG_10 = new Person("IMG_10", "./img/IMG_10.jpg", "female", ["dark-brown", "earrings", "glasses"]);
+            $IMG_11 = new Person("IMG_11", "./img/IMG_11.jpg", "female", ["blond-hair"]);
+            $IMG_12 = new Person("IMG_12", "./img/IMG_12.jpg", "female", ["blond-hair", "curly", "hat"]);
+            $IMG_13 = new Person("IMG_13", "./img/IMG_13.jpg", "female", ["light-brown", "curly", "glasses"]);
+            $IMG_17 = new Person("IMG_17", "./img/IMG_17.jpg", "female", ["red-hair"]);
+            $IMG_18 = new Person("IMG_18", "./img/IMG_18.jpg", "female", ["dark-brown", "hat", "glasses"]);
 
-            // TODO VANAF HIER
-            $IMG_08 = new Person("IMG_08", "./img/IMG_08.jpg", "male", ["bold", "white-hair", "glasses"]);
-            $IMG_09 = new Person("IMG_09", "./img/IMG_09.jpg", "male", ["bold", "white-hair", "glasses"]);
-            $IMG_10 = new Person("IMG_10", "./img/IMG_10.jpg", "male", ["bold", "white-hair", "glasses"]);
-            $IMG_11 = new Person("IMG_11", "./img/IMG_11.jpg", "male", ["bold", "white-hair", "glasses"]);
-            $IMG_12 = new Person("IMG_12", "./img/IMG_12.jpg", "male", ["bold", "white-hair", "glasses"]);
-            $IMG_13 = new Person("IMG_13", "./img/IMG_13.jpg", "male", ["bold", "white-hair", "glasses"]);
-            // $IMG_14 = new Person("IMG_14", "./img/IMG_14.jpg", "male", ["bold", "white-hair", "glasses"]);
-            // $IMG_15 = new Person("IMG_15", "./img/IMG_15.jpg", "male", ["bold", "white-hair", "glasses"]);
-            // $IMG_16 = new Person("IMG_16", "./img/IMG_16.jpg", "male", ["bold", "white-hair", "glasses"]);
-            $IMG_17 = new Person("IMG_17", "./img/IMG_17.jpg", "male", ["bold", "white-hair", "glasses"]);
-            $IMG_18 = new Person("IMG_18", "./img/IMG_18.jpg", "male", ["bold", "white-hair", "glasses"]);
-
-            // $whoItIs = $allPersons[array_rand($allPersons, 1)];
+            $IMG_01->makeImg();
+            $IMG_02->makeImg();
+            $IMG_03->makeImg();
+            $IMG_04->makeImg();
+            $IMG_05->makeImg();
+            $IMG_06->makeImg();
+            $IMG_07->makeImg();
+            $IMG_08->makeImg();
+            $IMG_09->makeImg();
+            $IMG_10->makeImg();
+            $IMG_11->makeImg();
+            $IMG_12->makeImg();
+            $IMG_13->makeImg();
+            $IMG_17->makeImg();
+            $IMG_18->makeImg();
 
             ?>
 
