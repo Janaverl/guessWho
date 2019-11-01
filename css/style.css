@@ -65,7 +65,7 @@ h1 {
   to {
     width: 100%; } }
 
-/* The turn-over button*/
+/* The buttons*/
 button {
   background-color: black;
   color: white;
@@ -78,7 +78,7 @@ button {
   margin: 4px 2px;
   cursor: pointer; }
 
-.turn {
+button {
   -webkit-animation: slit-in-horizontal 0.45s ease-out 2s both;
   animation: slit-in-horizontal 0.45s ease-out 2s both; }
 

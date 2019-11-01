@@ -46,7 +46,9 @@ $(document).ready(function () {
             function checkIfWon(){
                 var len = $('.person').length;
                 if(len == 1 ){
-                    alert("Je hebt gewonnen! In "+t+" keer!");
+                    $('.title').remove();
+                    // alert("Je hebt gewonnen! In "+t+" keer!");
+                    $('.controls').append('<h2>Je hebt gewonnen!</h2><p>En daar had je '+t+' beurten voor nodig.</p> <form action="./index.php"><button type="submit">speel opnieuw</button></form>')
                 }
             }
             checkIfWon();
