@@ -77,12 +77,22 @@ button{
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
+  min-width: 200px;
   cursor: pointer;
 }
 
+/* unvisited link */
+a:link, 
+a:visited, 
+a:hover,
+a:active {
+  color: white;
+  text-decoration: none;
+}
+
 button{
-        -webkit-animation: slit-in-horizontal 0.45s ease-out 2s both;
-                animation: slit-in-horizontal 0.45s ease-out 2s both;
+  -webkit-animation: slit-in-horizontal 0.45s ease-out 2s both;
+          animation: slit-in-horizontal 0.45s ease-out 2s both;
 }
 
  @-webkit-keyframes slit-in-horizontal {
@@ -136,4 +146,9 @@ button{
         object-fit: cover;
         // height: auto;
     }
+}
+
+form{
+  display: flex;
+  flex-direction: column;
 }

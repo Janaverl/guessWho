@@ -17,7 +17,6 @@
         <div class="controls">
             <form action="">
                 <h2 class="title">Kies je vraag:</h2>
-
                 <?php
                 require_once './php/Question.php';
 
@@ -101,6 +100,6 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./js/yourscript.js"></script>
+    <script src="./js/guessWho.js"></script>
 </body>
 </html>
