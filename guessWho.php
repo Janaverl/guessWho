@@ -9,8 +9,16 @@
 
     <link rel="stylesheet" href="./css/style.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/guessWho.js"></script>
+
 </head>
 <body>
+    <div class="smallScreens">
+        <p>Helaas, dit scherm is te klein om dit spelletje te spelen.</p>
+        <button><a href="#">bezoek mijn website.</a></button>
+    </div>
+
     <div class="wrapper">
     <h1>Ra ra ra, wie zou het zijn?</h1>
     <div class="container">
@@ -99,7 +107,11 @@
     </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./js/guessWho.js"></script>
+    <footer>
+        <p><a href="../../index.html">Bezoek mijn website</a></p>
+        <p>by Jana Verlinde | 2019</p>
+        <p><a href="https://github.com/Janaverl/guessWho" target="_blank">Zelf aan de slag?<br>Clone mijn code op github</a></p>
+    </footer>
+
 </body>
 </html>
