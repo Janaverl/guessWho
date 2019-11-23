@@ -23,65 +23,58 @@ position: fixed;
 z-index: -1;
 }
 
-.wrapper, footer {
-  display: none;
-}
-.smallScreens{
-    display: block;
-    padding: 100px 20px 0 20px;
-    color: #cb4256;
-    font-weight: bold;
-    z-index: 100;
-}
-
-@media only screen and (min-width: 1200px) and (min-height: 700px) {
 
 .wrapper, footer {
-  display: initial;
+display: none;
+}
+
+.wrapper, footer {
+display: initial;
 }
 
 .wrapper {
-    width: 100vw;
-    max-width: 100%;
-    margin:0;
-    position: relative;
-    padding-bottom: 2.5vh;
-  }
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding-bottom: 2.5vh;
+}
 
 h1{
-    text-align: center;
-    margin: 0;
-    padding: 50px;
+  text-align: center;
+  margin: 0;
+  padding: 50px;
 }
-  
+
 .container{
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  // width: min-content;
 }
 
 // the controls
 .controls{
-    width: 20%;
-    background: lightgrey;
-    margin-left: 20px;
-    padding: 5px;
-    form > label{
-        display: block;
-        margin-bottom: 10px;
-    }
+  width: 20%;
+  min-width: 200px;
+  background: lightgrey;
+  margin: 0 20px;
+  padding: 5px;
+  form > label{
+      display: block;
+      margin-bottom: 10px;
+  }
 
 }
 
 // the answer
 .answer{
-    font-family: 'Shadows Into Light', cursive;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    white-space: nowrap; /* Keeps the content on a single line */
-    letter-spacing: .15em;
-    animation: 
-      typing 2s steps(40, end),
+  font-family: 'Shadows Into Light', cursive;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: .15em;
+  animation: 
+    typing 2s steps(40, end),
 }
-  
+
 /* The typing effect */
 @keyframes typing {
 from { width: 0 }
@@ -90,17 +83,17 @@ to { width: 100% }
 
 /* The buttons*/
 button{
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  max-width: 250px;
-  cursor: pointer;
+background-color: black;
+color: white;
+border: none;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+max-width: 250px;
+cursor: pointer;
 }
 
 /* unvisited link */
@@ -108,90 +101,91 @@ a:link,
 a:visited, 
 a:hover,
 a:active {
-  color: white;
-  text-decoration: none;
+color: white;
+text-decoration: none;
 }
 
 button{
-  -webkit-animation: slit-in-horizontal 0.45s ease-out 2s both;
-          animation: slit-in-horizontal 0.45s ease-out 2s both;
+-webkit-animation: slit-in-horizontal 0.45s ease-out 2s both;
+        animation: slit-in-horizontal 0.45s ease-out 2s both;
 }
 
- @-webkit-keyframes slit-in-horizontal {
-    0% {
-      -webkit-transform: translateZ(-800px) rotateX(90deg);
-              transform: translateZ(-800px) rotateX(90deg);
-      opacity: 0;
-    }
-    54% {
-      -webkit-transform: translateZ(-160px) rotateX(87deg);
-              transform: translateZ(-160px) rotateX(87deg);
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: translateZ(0) rotateX(0);
-              transform: translateZ(0) rotateX(0);
-    }
+@-webkit-keyframes slit-in-horizontal {
+  0% {
+    -webkit-transform: translateZ(-800px) rotateX(90deg);
+            transform: translateZ(-800px) rotateX(90deg);
+    opacity: 0;
   }
-  @keyframes slit-in-horizontal {
-    0% {
-      -webkit-transform: translateZ(-800px) rotateX(90deg);
-              transform: translateZ(-800px) rotateX(90deg);
-      opacity: 0;
-    }
-    54% {
-      -webkit-transform: translateZ(-160px) rotateX(87deg);
-              transform: translateZ(-160px) rotateX(87deg);
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: translateZ(0) rotateX(0);
-              transform: translateZ(0) rotateX(0);
-    }
+  54% {
+    -webkit-transform: translateZ(-160px) rotateX(87deg);
+            transform: translateZ(-160px) rotateX(87deg);
+    opacity: 1;
   }
+  100% {
+    -webkit-transform: translateZ(0) rotateX(0);
+            transform: translateZ(0) rotateX(0);
+  }
+}
+@keyframes slit-in-horizontal {
+  0% {
+    -webkit-transform: translateZ(-800px) rotateX(90deg);
+            transform: translateZ(-800px) rotateX(90deg);
+    opacity: 0;
+  }
+  54% {
+    -webkit-transform: translateZ(-160px) rotateX(87deg);
+            transform: translateZ(-160px) rotateX(87deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateZ(0) rotateX(0);
+            transform: translateZ(0) rotateX(0);
+  }
+}
 
 // the grid
 .grid{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    // width: 50%;
-    grid-gap: 10px;
-    // max-width: 800px;
-    margin: 0 auto;
-    .person, .back {
-        width: 150px;
-        height: 200px;
-    }
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        // height: auto;
-    }
+  display: grid;
+  width: 80%;
+  @media only screen and (min-width: 1000px){
+  max-width: 800px;
+  }
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 10px;
+  margin: 0 0 0 50px;
+  // width: 50%;
+  grid-gap: 10px;
+  // max-width: 800px;
+  margin: 0 auto;
+  .person, .back {
+      width: 150px;
+      height: 200px;
+  }
+  img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      // height: auto;
+  }
 }
 
 form{
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 
 
 // footer
 footer{
-  background-color: #cb4256;
-  color: white;
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 25px;
-  letter-spacing: 2px;
-  margin-top: 100px; 
-  padding: 50px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.smallScreens{
-  display: none;
-}
-
+background-color: #cb4256;
+color: white;
+font-family: "Abhaya Libre", serif;
+font-size: 17px;
+font-weight: 400;
+line-height: 25px;
+letter-spacing: 2px;
+margin-top: 100px; 
+padding: 50px;
+display: flex;
+justify-content: space-between;
 }

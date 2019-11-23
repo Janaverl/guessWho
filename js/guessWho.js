@@ -48,7 +48,7 @@ $(document).ready(function () {
                 if(len == 1 ){
                     $('.title').remove();
                     // alert("Je hebt gewonnen! In "+t+" keer!");
-                    $('.controls').append('<h2>Je hebt gewonnen!</h2><p>En daar had je '+t+' beurten voor nodig.</p> <form action="./guessWho.php"><button type="submit">speel opnieuw</button><button><a href="#">bezoek mijn website</a></button></form>')
+                    $('.controls').append('<h2>Je hebt gewonnen!</h2><p>En daar had je '+t+' beurten voor nodig.</p> <form action="./guessWho.php"><button type="submit">speel opnieuw</button><button><a href="http://www.janaverlinde.be/"  target="_blank" rel="noopener noreferrer">bezoek mijn website</a></button></form>')
                 }
             }
             checkIfWon();
