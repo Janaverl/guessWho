@@ -14,11 +14,6 @@
 
 </head>
 <body>
-    <div class="smallScreens">
-        <p>Helaas, dit scherm is te klein om dit spelletje te spelen.</p>
-        <button><a href="#">bezoek mijn website.</a></button>
-    </div>
-
     <div class="wrapper">
     <h1>Ra ra ra, wie zou het zijn?</h1>
     <div class="container">
@@ -108,9 +103,9 @@
     </div>
 
     <footer>
-        <p><a href="../../index.html">Bezoek mijn website</a></p>
+        <p><a href="http://www.janaverlinde.be/"  target="_blank" rel="noopener noreferrer">Bezoek mijn website</a></p>
         <p>by Jana Verlinde | 2019</p>
-        <p><a href="https://github.com/Janaverl/guessWho" target="_blank">Zelf aan de slag?<br>Clone mijn code op github</a></p>
+        <p><a href="https://github.com/Janaverl/guessWho" target="_blank" rel="noopener noreferrer">Zelf aan de slag?<br>Clone mijn code op github</a></p>
     </footer>
 
 </body>

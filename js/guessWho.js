@@ -33,10 +33,10 @@ $(document).ready(function () {
             // turn the cards over
             function turnCardsOver(){
                 if($( whoItIs ).hasClass( radioValue )){
-                    $(".person").not('.'+radioValue).replaceWith("<div class='back'><img src='./img/back.png'></div>");
+                    $(".person").not('.'+radioValue).replaceWith("<div class='back'><img src='./img/back.jpg'></div>");
                     
                 } else{
-                    $('.person.'+radioValue).replaceWith("<div class='back'><img src='./img/back.png'></div>");
+                    $('.person.'+radioValue).replaceWith("<div class='back'><img src='./img/back.jpg'></div>");
                 }
             }
 
